@@ -1,0 +1,1019 @@
+/* Import "Open Sans" Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Start Variables */
+:root {
+    --main-color: #19c8f1;
+    --secondary-color: #1f2021;
+    --transparent-color: rgb(15 116 143 / 70%);
+    --main-p-color: #a8a8a8;
+    --section-padding: 90px;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    caret-color: white;
+}
+ul {
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+/* Start Components */
+/* Start Main Heading */
+.main-heading {
+    width: 500px;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    padding-bottom: 60px;
+}
+@media (max-width:768px) {
+    .main-heading {
+        width: 100%;
+    }
+}
+.main-heading h2 {
+    font-size: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+    width: fit-content;
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+.main-heading h2::before {
+    content: "";
+    width: 80%;
+    height: 1px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+} 
+.main-heading h2::after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--secondary-color);
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+.main-heading p {
+    line-height: 1.6;
+    font-size: 13px;
+    color: var(--main-p-color);
+}
+/* End Main Heading */
+/* Start Components */
+/* Start Header */
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 96px;
+}
+header .container::after {
+    content: "";
+    position: absolute;
+    background-color: #a2a2a2;
+    height: 1px;
+    width: calc(100% - 30px);
+    bottom: 0px;
+    left: 15px;
+}
+header .container a img {
+    height: 40px;
+}
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header .container nav .toggle {
+    margin-right: 20px;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+@media (min-width:768px) {
+    header .container nav .toggle {
+        display: none;
+    }
+}
+header .container nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: .3s;
+}
+@media (max-width:768px) {
+    header .container nav ul {
+        display: none;
+    }
+    header .container nav .toggle:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgb(0 0 0 / 50%);
+        width: 100%;
+    }
+    header .container nav .toggle + ul li a {
+        padding: 20px;
+    }
+}
+header .container ul a {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 40px 15px;
+    transition: .3s;
+}
+header nav ul a.active,
+header nav ul a:hover {
+    border-bottom: 1.5px solid var(--main-color);
+    color: var(--main-color);
+    position: relative;
+    z-index: 3;
+}
+header nav .form {
+    border-left: 1px solid #a2a2a2;
+    padding: 5px 0 5px 15px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+@media (max-width:768px) {
+    header nav .form {
+        margin-left: 0;
+    }
+}
+header nav .form i {
+    font-size: 25px;
+    color: white;
+}
+/* End Header */
+/* Start Landing */
+.landing {
+    min-height: 100vh;
+    background-image: url(../images/bg2.jpg);
+    background-size: cover;
+    background-color: black;
+    position: relative;
+}
+.landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 20%);
+}
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    background-color: var(--transparent-color);
+    color: white;
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: .3s;
+}
+.landing .text .content {
+    max-width: 500px;
+}
+@media (max-width:768px) {
+    .landing .text {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 30px;
+    }
+    .landing .text .content {
+        max-width: 100%;
+    }
+}
+.landing .text .content h2 {
+    text-transform: uppercase;
+    line-height: 50px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: normal;
+}
+.landing .text .content p {
+    line-height: 28px;
+    font-size: 13px;
+}
+.landing i.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+.landing i.arrow-left {
+    left: 20px;
+}
+.landing i.arrow-right {
+    right: 20px;
+}
+@media (max-width:768px) {
+    .landing i.arrow {
+        display: none;
+    }
+}
+.landing .bullets {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    top: 100%;
+    left: 50%;
+    transform: translateY(-100%);
+    padding-bottom: 10px;
+}
+.landing .bullets li {
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.landing .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+/* End Landing */
+/* Start Services */
+.services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 50px;
+}
+@media (max-width:992px) {
+    .services .services-content {
+        grid-template-columns: 100%;
+    }
+}
+.services .services-content .service {
+    display: flex;
+    padding-bottom: 30px;
+}
+.services .services-content .service i {
+    color: var(--secondary-color);
+    margin-right: 55px;
+    transition: .6s;
+}
+@media (max-width:768px) {
+    .services .services-content .service i {
+        margin-right: 25px;
+    }
+}
+.services .services-content .service .text {
+    width: 70%;
+}
+.services .service .text h3 {
+    color: var(--main-color);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.services .service .text p {
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--main-p-color);
+}
+/* End Services */
+/* Start Design*/
+.design {
+    padding-top: var(--section-padding);
+    background-color: black;
+    background-image: url("../images/design-features.jpg");
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+}
+.design::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 20%);
+}
+.design .image,
+.design .text {
+    position: relative;
+    z-index: 3;
+    flex: 1;
+}
+.design .image {
+    text-align: center;
+    top: 60px;
+}
+.design .text {
+    background-color: var(--transparent-color);
+    padding: 50px;
+}
+.design .text .content h3 {
+    font-weight: normal;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.design .text .content ul li {
+    padding: 15px 0;
+}
+.design .text .content ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f108";
+    font-weight: 800;
+    font-size: 20px;
+    margin-right: 20px;
+    position: relative;
+    top: 2px;
+}
+@media (max-width:768px) {
+    .design .image {
+        display: none;
+    }
+    .design .text {
+        padding: 30px;
+    }
+}
+/* End Design */
+/* Start Portfolio */
+.portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.portfolio ul {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 40px;
+}
+.portfolio ul li {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #1f2021;
+}
+.portfolio ul li:hover, 
+.portfolio ul li.active {
+    background-color: var(--main-color);
+    color: white;
+}
+.portfolio .gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio .gallery .box {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 5px;
+}
+@media (min-width:768px) {
+    .portfolio .gallery .box {
+        flex-basis: 50%;
+    }
+}
+@media (min-width:1199px) {
+    .portfolio .gallery .box {
+        flex-basis: 25%;
+    }
+}
+.portfolio .gallery .box img {
+    width: 100%;
+    max-width: 100%;
+    transition: .4s;
+}
+.portfolio .gallery .box .caption {
+    padding: 30px;
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 100%;
+    transition: .4s;
+}
+.portfolio .gallery .box:hover .caption {
+    bottom: 0;
+}
+.portfolio .gallery .box:hover img {
+    transform: rotate(3deg) scale(1.2);
+}
+.portfolio .gallery .box .caption h4 {
+    color: var(--secondary-color);
+    font-weight: normal;
+    font-size: 20px;
+}
+.portfolio .gallery .box .caption p {
+    color: var(--main-color);
+    margin-top: 5px;
+}
+.portfolio .more {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+}
+/* End Portfolio */
+/* Start About */
+.about .image {
+    width: fit-content;
+    margin: 0 auto;
+}
+.about .image img {
+    max-width: 100%;
+}
+/* End About */
+/* Start Stats */
+.stats {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--secondary-color);
+    position: relative;
+    text-align: center;
+}
+.stats::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+.stats .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.stats .container .box {
+    padding: 50px;
+    color: white;
+    background-color: var(--transparent-color);
+}
+@media (max-width:768px) {
+    .stats .container .box {
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) {
+    .stats .container .box {
+        flex-basis: 50%;
+    }
+}
+@media (min-width:992px) {
+    .stats .container .box {
+        flex-basis: 25%;
+    }
+}
+.stats .box i {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    place-content: center;
+    margin-bottom: 10px;
+}
+.stats .box h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.stats .box p {
+    font-size: 13px;
+}
+/* End Stats */
+/* Start Skills */
+.skills {
+    padding-top: var(--section-padding);
+    padding-bottom: 50px;
+}
+.skills .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+@media (min-width:992px) {
+    .skills .container > div {
+        flex-basis: 45%;
+    }
+}
+.skills .container > div > h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.skills .container > div > p {
+    color: var(--main-p-color);
+    margin-bottom: 60px;
+    line-height: 2;
+    text-align: center;
+}
+.skills .container .testimonials .content {
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    line-height: 1.8;
+}
+.skills .container .testimonials .content img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+.skills .container .testimonials .content .text {
+    padding: 10px;
+    border-bottom: 1px solid var(--main-p-color);
+}
+.skills .container .testimonials .content .text p {
+    color: var(--main-p-color);
+    font-size: 14px;
+    text-align: end;
+}
+@media (max-width:768px) {
+    .skills .container .testimonials .content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills .container .testimonials .content img {
+        margin: 5px auto 10px;
+    }
+}
+.skills .container .testimonials .bullets {
+    display: flex;
+    gap: 5px;
+    width: fit-content;
+    margin: 50px auto;
+}
+.skills .container .testimonials .bullets li {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--main-p-color);
+}
+.skills .container .testimonials .bullets li.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.skills .container .our-skills .prog-holder h4 {
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.skills .container .our-skills .prog-holder div {
+    height: 30px;
+    width: 100%;
+    background-color: var(--main-p-color);
+    margin-bottom: 30px;
+    position: relative;
+}
+.skills .container .our-skills .prog-holder div span {
+    position: absolute;
+    height: 100%;
+    background-color: var(--main-color);
+}
+.skills .container .our-skills .prog-holder div span::before {
+    content: attr(data-progress);
+    height: 20px;
+    width: 30px;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: calc(100% + 5px);
+    right: -15px;
+}
+.skills .container .our-skills .prog-holder div span::after {
+    content: "";
+    border: 5px solid;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    right: -5px;
+}
+/* End Skills */
+/* Start Quote */
+.quote {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/quote.jpg);
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.quote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 80%);
+}
+.quote .container {
+    position: relative;
+}
+.quote .container q {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+}
+@media (max-width:768px) {
+    .quote .container q {
+        font-size: 25px;
+    }
+}
+.quote .container q::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f10d";
+    font-weight: 800;
+    font-size: 20px;
+    position: relative;
+    bottom: 10px;
+}
+.quote .container q::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f10e";
+    font-weight: 800;
+    font-size: 20px;
+    position: relative;
+    bottom: 10px;
+}
+.quote .container span {
+    text-transform: capitalize;
+}
+/* End Quote */
+/* Start Pricing */
+.pricing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.pricing .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+.pricing .content .plan {
+    text-align: center;
+    background-color: #fcfcfc;
+}
+.pricing .content .plan .head {
+    padding: 40px 10px;
+    border-top: 1px solid var(--main-color);
+}
+.pricing .content .plan .head h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.pricing .content .plan .head span {
+    display: block;
+    font-weight: bold;
+    font-size: 60px;
+}
+.pricing .content .plan .head span::before {
+    content: "$";
+    font-size: 25px;
+    font-weight: normal;
+    position: relative;
+    bottom: 40px;
+    margin-right: 10px;
+}
+.pricing .content .plan .head span::after {
+    content: "/Mo";
+    font-size: 20px;
+    margin-left: 10px;
+}
+.pricing .container .plan ul {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--main-color);
+}
+.pricing .container .plan ul li {
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+}
+.pricing .container .plan ul li:not(:last-child)::after {
+    content: "";
+    height: 1px;
+    width: 150px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pricing .container .plan .foot {
+    border-top: 1px solid var(--main-color);
+    padding: 20px auto 40px;
+}
+.pricing .container .plan .foot a {
+    display: block;
+    margin: 30px auto;
+    padding: 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: blue;
+    width: fit-content;
+    border: 1px solid var(--main-color);
+}
+.pricing .container > p {
+    text-align: center;
+    margin: 50px 0 30px;
+    font-size: 20px;
+}
+.pricing .container > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 20px;
+    color: white;
+    background-color: var(--main-color);
+    width: fit-content;
+    margin: 0 auto;
+}
+/* End Pricing */
+/* Start Subscribe */
+.subscription {
+    padding: var(--section-padding) 0;
+    background-image: url("../images/subscribe.jpg");
+    background-size: cover;
+    position: relative;
+}
+.subscription::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 65%);
+}
+.subscription .container {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+.subscription .container form {
+    display: flex;
+    max-width: 100%;
+    position: relative;
+}
+.subscription .container i {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+.subscription .container input:first-of-type {
+    padding: 20px 20px 20px 60px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-right: none;
+    outline: none;
+    padding: 20px 20px 20px 60px;
+    color: white;
+}
+.subscription .container input:first-of-type::placeholder {
+    color: white;
+}
+.subscription .container input:last-of-type {
+    padding: 20px;
+    background-color: var(--main-color);
+    color: white;
+    border: 1px solid white;
+    border-left: none;
+    cursor: pointer;
+}
+.subscription .container p {
+    margin-left: 40px;
+    line-height: 2;
+}
+@media (max-width:768px) {
+    .subscription .container p {
+        text-align: center;
+        margin: 20px auto;
+    }
+}
+/* End Subscribe */
+/* Start Contact */
+.contact {
+    padding: var(--section-padding) 0;
+}
+.contact .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+@media (max-width:768px) {
+    .contact .content > div {
+        flex-basis: 100%;
+    }
+}
+@media (min-width:768px) {
+    .contact .content > div:last-of-type {
+        flex-basis: 20%;
+    }
+    .contact .content > div:first-of-type {
+        flex-basis: 70%;
+    }
+}
+.contact .content .inpt-section {
+    display: grid;
+    flex-direction: column;
+    caret-color: black;
+}
+.contact .content .inpt-section input.main-inpt {
+    width: 100%;
+    padding: 20px;
+    margin: 0 0 30px;
+    outline: none;
+    border: 1px solid var(--main-p-color);
+}
+.contact .content .inpt-section form textarea {
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    outline: none;
+    border: 1px solid var(--main-p-color);
+    margin: 0 0 30px;
+}
+.contact .content .inpt-section input:last-child {
+    width: fit-content;
+    padding: 20px;
+    color: white;
+    background-color: var(--main-color);
+    outline: none;
+    border: 1px solid var(--main-p-color);
+    cursor: pointer;
+    justify-self: flex-end;
+}
+.contact .content .info h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 0 30px;
+}
+.contact .content .info span {
+    color: var(--main-p-color);
+    display: block;
+    margin-bottom: 10px;
+}
+.contact .content .info h4:last-of-type {
+    margin: 90px 0 30px;
+}
+.contact .content .info address {
+    line-height: 2;
+    color: #777777;
+    margin-bottom: 40px;
+}
+@media (max-width:768px) {
+    .contact .content .inpt-section {
+        order: 2;
+    }
+    .contact .content .info {
+        text-align: center;
+    }
+    .contact .content .info h4:last-of-type {
+        margin: 50px 0 30px;
+    }
+}
+/* End Contact */
+/* Start Footer */
+footer {
+    padding: var(--section-padding) 0;
+    background-image: url("../images/subscribe.jpg");
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+}
+footer .container {
+    position: relative;
+}
+footer .container img {
+    width: 130px;
+    margin-bottom: 30px;
+}
+footer .container p {
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 20px;
+    width: fit-content;
+    border-bottom: 1px solid white;
+    margin: 0 auto 20px;
+}
+footer .container .icons i {
+    font-size: 20px;
+    padding: 10px;
+}
+footer .container .copyright {
+    margin-top: 50px;
+}
+footer .container .copyright span {
+    color: var(--main-color);
+}
+/* End Footer */
